@@ -5,11 +5,22 @@
 }
 
 body {
+  background: url('../images/background2.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+
+  @media screen and (max-width: 1000px) {
+    /* background: url('../images/welcome_page1.png'); */
+  }
+
   header {
     .navbar-top {
       position: absolute;
       top: 0;
-      left: 100px;
+      left: 150px;
 
       .stories {
         display: flex;
@@ -42,16 +53,31 @@ body {
         }
 
       }
+
+      @media screen and (max-width: 1000px) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.400);
+
+        .stories {
+          display: flex;
+          flex-direction: column;
+        }
+      }
     }
 
     .navbar-left {
       position: absolute;
       left: 0;
+      top: 0;
+      bottom: 0;
       width: max-content;
-      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: rgba(255, 255, 255, 0.446);
 
       .menu-items {
         li {
@@ -67,6 +93,10 @@ body {
           }
         }
       }
+
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 
@@ -77,6 +107,12 @@ body {
     position: absolute;
     top: 150px;
     left: 200px;
+
+    @media screen and (max-width: 1000px) {
+      position: absolute;
+      left: 200px;
+      top: 0;
+    }
 
     .reciever_details {
       display: flex;
@@ -92,32 +128,63 @@ body {
       .container_chat {
         height: 60vh;
 
-        .recieve {
-          background: rgba(0, 0, 255, 0.300);
-          padding: 10px;
-          min-width: 100px;
-          width: max-content;
-          margin: 10px;
-          transition: ease-in-out 300ms;
-          color: white;
+        @media screen and (max-width: 1000px) {
+          height: 85vh;
+        }
 
-          &:hover {
-            background: rgba(0, 0, 255, 0.600);
-            cursor: pointer;
+        .reactions {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 150px;
+          display: none;
+          background: darkgrey;
+          border-radius: 12px;
+
+          p {
+            img {
+              height: 20px;
+              width: 20px;
+              padding: 10px;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .recieve {
+          p {
+            background: rgba(0, 0, 255, 0.300);
+            padding: 10px;
+            min-width: 100px;
+            width: max-content;
+            margin: 10px;
+            transition: ease-in-out 300ms;
+            color: white;
+
+            &:hover {
+              background: rgba(0, 0, 255, 0.600);
+              cursor: pointer;
+            }
           }
         }
 
         .send {
-          background: rgba(255, 0, 0, 0.300);
-          padding: 10px;
-          min-width: 100px;
-          width: max-content;
-          margin: 10px;
-          transition: ease-in-out 300ms;
+          p {
+            background: rgba(255, 0, 0, 0.300);
+            padding: 10px;
+            min-width: 100px;
+            width: max-content;
+            margin: 10px;
+            transition: ease-in-out 300ms;
 
-          &:hover {
-            background: rgba(255, 0, 0, 0.600);
-            cursor: pointer;
+            &:hover {
+              background: rgba(255, 0, 0, 0.600);
+              cursor: pointer;
+            }
           }
         }
       }
@@ -128,8 +195,9 @@ body {
         justify-content: start;
         height: 50px;
         border: 1px solid black;
-        border-radius: 20px;
+        border-radius: 12px;
         overflow: hidden;
+        width: max-content;
 
         input {
           width: 95%;

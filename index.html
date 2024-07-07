@@ -46,19 +46,25 @@
     </div>
     <div class="chat_area">
       <div class="container_chat">
-        <div class="recieve">
+        <div class="reactions" id="reactions">
+          <p><img src="./images/heart-regular.svg"></p>
+          <p><img src="./images/heart-crack-solid.svg"></p>
+          <p><img src="./images/share-solid.svg"></p>
+        </div>
+        <div class="recieve" id="recieve">
           <p>Hello</p>
         </div>
-        <div class="send">
+        <div class="send" id="send">
           <p>Hi</p>
         </div>
       </div>
       <div class="container_input">
         <input type="text" name="msg" id="msg">
-        <button class="send-btn">Send</button>
+        <button class="send-btn" id="send_btn">Send</button>
       </div>
     </div>
   </section>
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
